@@ -70,7 +70,10 @@ If the comment does contain issues or suggestions:
 ---
 ## ⌚️ 2025.03.26 Update:
 
-During the annotation process, we identified an issue with constructing the diff_hunk for multi-line reviews, which did not always align with the changes displayed on the Comment_HTML_URL web page. This issue has been resolved, and the annotation files have been updated accordingly. This fix only affects the diff_hunk portion of some multi-line patch-level and human review comments; all other content and order remain unchanged. If existing judgments were made based on “Open the Comment_HTML_URL in the browser to view the full comment and its context,” the annotation results will not be affected.
+During the annotation process, we identified an issue with constructing the `Diff_hunk` for multi-line reviews, which did not always align with the changes displayed on the `Comment_HTML_URL` web page.
+This issue has been resolved, and the annotation files have been updated accordingly.
+This fix only affects the `Diff_hunk` portion of some multi-line patch-level and human review comments; all other content and order remain unchanged.
+If existing judgments were made based on “Open the `Comment_HTML_URL` in the browser to view the full comment and its context,” the annotation results will not be affected.
 
 ---
 
