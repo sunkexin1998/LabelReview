@@ -692,7 +692,8 @@ The magic number `0.3` has been replaced with the constant `BONSAI_SLEAP_V3`, wh
 
 
 
-<!-- This is an auto-generated comment by OSS CodeRabbit -->","+                columns[0 : (len(identities) + 1)] if bonsai_sleap_v == BONSAI_SLEAP_V3 else columns[0:2]
+<!-- This is an auto-generated comment by OSS CodeRabbit -->","+            part_columns = (
++                columns[0 : (len(identities) + 1)] if bonsai_sleap_v == BONSAI_SLEAP_V3 else columns[0:2]
 +            )
              part_columns.extend([f""{part}_x"", f""{part}_y"", f""{part}_likelihood""])
              part_data = pd.DataFrame(data[part_columns])
@@ -1426,7 +1427,10 @@ The regular expression search does not have any error handling. If the search fa
 ```
 
 
-<!-- This is an auto-generated comment by OSS CodeRabbit -->","         patch_installation = {
+<!-- This is an auto-generated comment by OSS CodeRabbit -->","+        patch_key = {""food_patch_serial_number"": patch.get(""SerialNumber"") or patch[""PortName""]}
+         patch_list.append(patch_key)
+ 
+         patch_installation = {
              **patch_key,
              ""experiment_name"": experiment_name,
              ""food_patch_install_time"": epoch_start,
@@ -1684,9 +1688,7 @@ The `find_or_create` method could potentially raise an exception if the record f
 This way, you can control how your application behaves when a record fails to save, rather than letting it crash with an unhandled exception.
 
 
-<!-- This is an auto-generated comment by OSS CodeRabbit -->","     validates :url, presence: true
-     validates :short_url, presence: true, uniqueness: { scope: :client_id }
-+
+<!-- This is an auto-generated comment by OSS CodeRabbit -->","+
 +    def self.find_or_create(client, short_url, url)
 +      record = find_or_initialize_by(client: client, short_url: short_url)
 +      return record if record.persisted?
@@ -1741,7 +1743,10 @@ In the `get_bodyparts` method, the error handling for KeyError could be improved
 
 
 
-<!-- This is an auto-generated reply by OSS CodeRabbit -->","+        parts = []
+<!-- This is an auto-generated reply by OSS CodeRabbit -->","+    def get_bodyparts(self, file: Path) -> list[str]:
+         """"""Returns a list of bodyparts from a model's config file.""""""
+-        parts = None
++        parts = []
          with open(file) as f:
              config = json.load(f)
          if file.stem == ""confmap_config"":  # SLEAP
@@ -1807,7 +1812,8 @@ This block of code checks if `before` and `after` are `None` and assigns them a 
 
 
 
-<!-- This is an auto-generated comment by OSS CodeRabbit -->","+        before = pd.Timedelta(0)
+<!-- This is an auto-generated comment by OSS CodeRabbit -->","+    if before is None:
++        before = pd.Timedelta(0)
 +    elif before is not pd.Timedelta:
          before = pd.Timedelta(before)
 -    if after is not pd.Timedelta:
@@ -1926,13 +1932,7 @@ The query is not properly formatted. It would be more readable if each condition
 
 
 
-<!-- This is an auto-generated comment by OSS CodeRabbit -->","@@ -245,8 +220,7 @@
-         # If the same camera serial number is currently installed
-         # check for any changes in configuration, if not, skip this
-         current_patch_query = (
--            acquisition.ExperimentFoodPatch
--            - acquisition.ExperimentFoodPatch.RemovalTime
-+            acquisition.ExperimentFoodPatch - acquisition.ExperimentFoodPatch.RemovalTime
+<!-- This is an auto-generated comment by OSS CodeRabbit -->","+            acquisition.ExperimentFoodPatch - acquisition.ExperimentFoodPatch.RemovalTime
              & experiment_key
              & patch_key","--- 
 
@@ -2390,7 +2390,11 @@ The changes made to the first slider look good. The addition of `appendArrows` a
 ```
 
 
-<!-- This is an auto-generated comment by OSS CodeRabbit -->","+	
+<!-- This is an auto-generated comment by OSS CodeRabbit -->","+		// First slider: .lsx-to-slider
+ 		$( '.lsx-to-slider .wp-block-post-template:not(.slider-disabled)' ).each( function() {
+ 			var $this = $( this );
+-
++	
  			lsx_to.pre_build_slider( $this );
 -
 -			if ( 1 < $this.children.length ) {
@@ -2831,7 +2835,18 @@ In the `DraftTranslation` class, you're calling `this.validate` in the construct
 
 
 
-<!-- This is an auto-generated comment by OSS CodeRabbit -->","-    this._original = originalText;
+<!-- This is an auto-generated comment by OSS CodeRabbit -->","+export class DraftTranslation extends Base {
+   constructor(
+-    originalText: Original,
+-    translatedText: Translated,
+-    translationConfig: TranslationConfig
++    id: TranslationId,
++    status: TranslationStatus,
++    userId: UserId,
++    original: Original,
++    config: TranslationConfig
+   ) {
+-    this._original = originalText;
 -    this._translated = translatedText;
 -    this._translationConfig = translationConfig;
 -    this.validate();
@@ -3549,7 +3564,8 @@ async function uploadDataToWeaviate(weaviateClient, mappedDocs, file) {
 
 
 
-<!-- This is an auto-generated comment by OSS CodeRabbit -->","+    const filesCollection = weaviateClient.collections.get('Files');
+<!-- This is an auto-generated comment by OSS CodeRabbit -->","+  async function uploadDataToWeaviate() {
++    const filesCollection = weaviateClient.collections.get('Files');
 +    const response = await filesCollection.data.insertMany(mappedDocs)
 +    console.log('File chunked and uploaded to Weaviate Vector DB:', file?.name, response);
 +  }
@@ -3734,7 +3750,21 @@ Here are the suggested changes:
 
 
 
-<!-- This is an auto-generated comment by OSS CodeRabbit -->","-    rescue StandardError => e
+<!-- This is an auto-generated comment by OSS CodeRabbit -->","+  def self.shorten_url(url, client, async: DynamicLinks.configuration.async_processing)
+     raise InvalidURIError, 'Invalid URL' unless Validator.valid_url?(url)
+ 
+-    strategy_key = configuration.shortening_strategy
++    strategy_key = DynamicLinks.configuration.shortening_strategy
++    strategy = StrategyFactory.get_strategy(strategy_key)
+ 
+-    strategy = begin
+-      StrategyFactory.get_strategy(strategy_key)
+-    rescue RuntimeError => e
+-      # This will catch the 'Unknown strategy' error from the factory
+-      raise ""Invalid shortening strategy: #{strategy_key}. Error: #{e.message}""
+-    rescue ArgumentError
+-      raise ""#{strategy_key} strategy needs to be initialized with arguments""
+-    rescue StandardError => e
 -      raise ""Unexpected error while initializing the strategy: #{e.message}""
 -    end
 +    short_url = strategy.shorten(url)
@@ -4473,7 +4503,9 @@ The new constructor for `PreprocessingClass` introduces several new parameters. 
 
 
 
-<!-- This is an auto-generated reply by OSS CodeRabbit -->","                  use_augmentation: bool = True,
+<!-- This is an auto-generated reply by OSS CodeRabbit -->","     def __init__(self,
++                 scenario: str = ""baseline"",
+                  use_augmentation: bool = True,
 -                 use_normalized_data: bool = True,
 +                 use_normalized_data: bool = False,
                   use_pca: bool = False,
@@ -4629,7 +4661,8 @@ The import statement for `Env` from the `@helpers/env` module is missing. Please
 
 
 
-<!-- This is an auto-generated comment by OSS CodeRabbit -->"," 
+<!-- This is an auto-generated comment by OSS CodeRabbit -->","+import Env from ""./env"";
+ 
 -let baseURL = process.env.URL;
 +const baseURL = Env.URL;","--- 
 
