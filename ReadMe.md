@@ -28,13 +28,14 @@ Each file shares the same format and fields.
 | `Comment_HTML_URL` | Web link to the comment (for visual inspection). |
 | `Original_Commit_id` | The commit at which the review comment was made. |
 | `Diff_path` | The file path where the comment was placed. |
+| `New_path` | The file path where the comment was placed. If New_path is NaN, it indicates that the file at Diff_path was not renamed in the commit identified by Merge_Commit_id. If a value is present, it represents the new file name after the file was renamed.
 | `Review_Start_Line` | Start line of the reviewed code range (from `original_start_line` in API). <br/>If it is empty, it is a single line review;<br/>Not applicable to file-level review actions.<br/>This line number corresponds to the position of the modified line in the `Original_Commit_id` |
 | `Review_End_Line` | End line of the reviewed code range (from `original_line` in API). <br/>Not applicable to file-level review actions.<br/>This line number corresponds to the position of the modified line in the `Original_Commit_id` |
 | `Diff_hunk` | The code diff being reviewed: <br>– For patch-level and human comments: directly from the   `diff_hunk` in `Comment_URL`<br/>– – For the single line review,  3 extra lines above the reviewed line as context (3 lines above for single-line, full range for multi-line. <br>– – For the multiple line review,  use the scope determined by `Review_Start_Line` and `Review_End_Line`. <br/>– For file-level comments: the diff between `Review_BASE_SHA` and `Original_Commit_id`. |
 | `Review_BASE_SHA` | Only applicable to file-level reviews:  <br>– For `mattzcarey/code-review-gpt`, this is always the PR's `BASE_SHA`.<br>– For other 2 file-level review action `anc95/ChatGPT-CodeReview` and `gvasilei/AutoReviewer`, this is obtained by checking if the original diff `diff_hunk`is a subset of the GitHub diff URL: <br>`https://api.github.com/repos/{repo_owner}/{repo_name}/compare/{base_sha}...{Original_Commit_id}` |
 | `Body` | The full text of the review comment.<br/>In some cases, human-written comments containing code suggestions in the format of:<br/>`" ```suggestion (specific code block)``` "`<br/>will be manually rewritten to a more explicit form:<br/>`"I suggest changing\n ```\n{old_code}\n```\n to\n```\n{new_code}\n```"`<br/>This is done to help large language models (LLMs) better understand the suggested changes. |
 | `Merge_Commit_id` | The final merged commit SHA of the pull request. |
-| `Change_Until_Merged` | The file changes between `Original_Commit_id` and `Merge_Commit_id`. |
+| `Change_Until_Merged` | The file changes between `Original_Commit_id` and `Merge_Commit_id`. If the file at `Diff_path` was deleted in the commit identified by `Merge_Commit_id`, the value will be "File_Deleted".|
 | `Whether it contain issues or suggestions` | **To be annotated:** `0` = No issue/suggestion, `1` = Contains issue/suggestion. |
 | `List of issues or suggestions` | **To be annotated:** List of mentioned issues or suggestions (if any). |
 | `Addressed Status Classification` | **To be annotated:** `0` = Not addressed, `1` = Partly addressed, `2` = Fully addressed. |
