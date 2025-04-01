@@ -1,5 +1,5 @@
-source_action,Comment_URL,Comment_HTML_URL,Review_Start_Line,Review_End_Line,Review_BASE_SHA,Original_Commit_id,Merge_Commit_id,Diff_path,New_path,Body,Diff_hunk,Change_Until_Merged,Whether it contain issues or suggestions (Not Contain: 0; Contain: 1),List of issues or suggestions,Addressed Status Classification (Not Enough Information：-1; Not Addressed: 0; Partly Addressed: 1; Fully Addressed: 2),Detail
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/yuriykulikov/AlarmClock/pulls/comments/1264656945,https://github.com/yuriykulikov/AlarmClock/pull/587#discussion_r1264656945,,89.0,,ea64442e029d54505ab8a7cfb82c833727ccad7f,0321ce23870cfe1c3a1bda33b3ea5357a67b2ec4,app/src/test/java/com/better/alarm/AlertServiceTest.kt,,"The code patch you provided includes changes in the initialization of an object. Here's a brief code review:
+source_action,Comment_URL,Comment_HTML_URL,Review_Start_Line,Review_End_Line,Original_Commit_id,Merge_Commit_id,Diff_path,New_path,Body,Diff_hunk,Change_Until_Merged,Whether it contain issues or suggestions (Not Contain: 0; Contain: 1),List of issues or suggestions,Addressed Status Classification (Not Enough Information：-1; Not Addressed: 0; Partly Addressed: 1; Fully Addressed: 2),Detail
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/yuriykulikov/AlarmClock/pulls/comments/1264656945,https://github.com/yuriykulikov/AlarmClock/pull/587#discussion_r1264656945,,89.0,ea64442e029d54505ab8a7cfb82c833727ccad7f,0321ce23870cfe1c3a1bda33b3ea5357a67b2ec4,app/src/test/java/com/better/alarm/AlertServiceTest.kt,,"The code patch you provided includes changes in the initialization of an object. Here's a brief code review:
 
 1. The addition of `prefs = mockk(relaxed = true)` suggests that a ""prefs"" object is being introduced with relaxed behavior. This means that the object will return default values for any methods called on it without explicitly mocking each method.
 
@@ -119,7 +119,7 @@ Overall, when reviewing the code patch, make sure to consider its impact on the 
 +    verify { player.setDataSource(""custom"") }
 +  }
  }",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/yuriykulikov/AlarmClock/pulls/comments/1264388529,https://github.com/yuriykulikov/AlarmClock/pull/587#discussion_r1264388529,,113.0,,40d59bd330fb5806e648a1e427d68565187d8f1b,0321ce23870cfe1c3a1bda33b3ea5357a67b2ec4,app/src/main/java/com/better/alarm/presenter/RingtonePicker.kt,,"The code patch you provided appears to be adding some extension functions and utility methods related to handling ringtone selection and retrieval.
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/yuriykulikov/AlarmClock/pulls/comments/1264388529,https://github.com/yuriykulikov/AlarmClock/pull/587#discussion_r1264388529,,113.0,40d59bd330fb5806e648a1e427d68565187d8f1b,0321ce23870cfe1c3a1bda33b3ea5357a67b2ec4,app/src/main/java/com/better/alarm/presenter/RingtonePicker.kt,,"The code patch you provided appears to be adding some extension functions and utility methods related to handling ringtone selection and retrieval.
 
 Here are some observations and suggestions:
 
@@ -290,7 +290,7 @@ Overall, the code patch seems functional but could use more comment explanations
          }
        }
        .getOrDefault("""")",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/pokt-network/pocket/pulls/comments/1206663442,https://github.com/pokt-network/pocket/pull/769#discussion_r1206663442,,12.0,,47c64678fb8951ffab49bd5633f36e01f8e83974,89eea03c454e90b88a4570af6f38f5241a3f22db,shared/messaging/proto/pocket_envelope.proto,,"The code patch provided adds a `nonce` field to the `PocketEnvelope` message in the Protocol Buffers schema. Here's a brief review:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/pokt-network/pocket/pulls/comments/1206663442,https://github.com/pokt-network/pocket/pull/769#discussion_r1206663442,,12.0,47c64678fb8951ffab49bd5633f36e01f8e83974,89eea03c454e90b88a4570af6f38f5241a3f22db,shared/messaging/proto/pocket_envelope.proto,,"The code patch provided adds a `nonce` field to the `PocketEnvelope` message in the Protocol Buffers schema. Here's a brief review:
 
 1.  Bug risk: There does not seem to be any syntax errors or immediate bug risks in the provided patch.
 
@@ -318,7 +318,7 @@ anc95/ChatGPT-CodeReview,https://api.github.com/repos/pokt-network/pocket/pulls/
 -  uint64 nonce = 2; // TECHDEBT: should this be the same as the nonce in `Transaction`?
 +  uint64 nonce = 2; // DISCUSS(#278): should this be the same as the nonce in `Transaction`?
  }",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/pokt-network/pocket/pulls/comments/1180843923,https://github.com/pokt-network/pocket/pull/699#discussion_r1180843923,,56.0,,f091070bd81768acf7af6943c1ea8ad03c3e13ea,37bc0a72df29bb6524cbd6b8274a82ad366e84f8,shared/k8s/debug.go,,"The code patch modifies the existing implementation to get the current namespace from a file and use that namespace to fetch validator private keys. Here are some suggestions for improvement:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/pokt-network/pocket/pulls/comments/1180843923,https://github.com/pokt-network/pocket/pull/699#discussion_r1180843923,,56.0,f091070bd81768acf7af6943c1ea8ad03c3e13ea,37bc0a72df29bb6524cbd6b8274a82ad366e84f8,shared/k8s/debug.go,,"The code patch modifies the existing implementation to get the current namespace from a file and use that namespace to fetch validator private keys. Here are some suggestions for improvement:
 
 1. Error handling in the `init()` function: Instead of logging an error and setting the default namespace when there is an issue getting the current namespace, consider propagating the error upwards so that users of this package are aware of the issue.
 
@@ -455,7 +455,7 @@ Now the caller can handle errors returned from the `GetCurrentNamespace` functio
 +
 +	return string(nsBytes), nil
  }",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1158559484,https://github.com/gluon-zone/web-apps/pull/453#discussion_r1158559484,,273.0,,2f89acacc135ebe26a314c97c0f4124bb2921e11,1ff5ec161b79e12edededab843d15a9898b4efe7,projects/portal/src/app/views/nft-pawnshop/lenders/lender-nfts/lender-nft/place-bid/place-bid.component.html,,"The code patch mainly involves adding placeholders to input fields and changing the display of currency symbols. There are no obvious bug risks or major improvements that can be suggested based on this code patch. However, it is possible that there may be other areas in the codebase which could benefit from improvement, depending on the specific requirements and goals of the project.","@@ -110,6 +110,7 @@ <h3 class=""font-bold text-lg"">What is the bid price?</h3>
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1158559484,https://github.com/gluon-zone/web-apps/pull/453#discussion_r1158559484,,273.0,2f89acacc135ebe26a314c97c0f4124bb2921e11,1ff5ec161b79e12edededab843d15a9898b4efe7,projects/portal/src/app/views/nft-pawnshop/lenders/lender-nfts/lender-nft/place-bid/place-bid.component.html,,"The code patch mainly involves adding placeholders to input fields and changing the display of currency symbols. There are no obvious bug risks or major improvements that can be suggested based on this code patch. However, it is possible that there may be other areas in the codebase which could benefit from improvement, depending on the specific requirements and goals of the project.","@@ -110,6 +110,7 @@ <h3 class=""font-bold text-lg"">What is the bid price?</h3>
                  <input
                    #bidAmountNgModelRef=""ngModel""
                    required
@@ -589,7 +589,7 @@ anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/com
              </div>
            </form>
          </div>",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1153052060,https://github.com/gluon-zone/web-apps/pull/372#discussion_r1153052060,,111.0,,3f2cf5b949cf95b67fd95020d8172aec292d0247,49fd8e60852d9652bf2a9970395cff9cdec432ad,projects/portal/src/assets/config.js,,"Based on the code patch, here are my observations:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1153052060,https://github.com/gluon-zone/web-apps/pull/372#discussion_r1153052060,,111.0,3f2cf5b949cf95b67fd95020d8172aec292d0247,49fd8e60852d9652bf2a9970395cff9cdec432ad,projects/portal/src/assets/config.js,,"Based on the code patch, here are my observations:
 
 - The code patch changes some constants related to different ports, domains, and chain IDs. It seems like these changes are meant for testing or developing purposes.
 
@@ -652,7 +652,7 @@ Overall, I don't see any obvious bug risks in this patch. However, it's difficul
          developerURL: `${location.protocol}//${domainCauchyEA}:${developerPort}`,
        },
        navigations: [],",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/yuriykulikov/AlarmClock/pulls/comments/1214813220,https://github.com/yuriykulikov/AlarmClock/pull/575#discussion_r1214813220,,85.0,,254637ddf1e3dcbd34f9e6ae8b877387d1f5a549,ff4f12f00f50b3218fbb4a2c8edecbbbbec81e71,app/build.gradle.kts,,"Based on the provided code patch, it appears to be a small update that increases the `versionCode` and `versionName` of the Android application. 
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/yuriykulikov/AlarmClock/pulls/comments/1214813220,https://github.com/yuriykulikov/AlarmClock/pull/575#discussion_r1214813220,,85.0,254637ddf1e3dcbd34f9e6ae8b877387d1f5a549,ff4f12f00f50b3218fbb4a2c8edecbbbbec81e71,app/build.gradle.kts,,"Based on the provided code patch, it appears to be a small update that increases the `versionCode` and `versionName` of the Android application. 
 
 There are no apparent bug risks since the changes only affect versioning values.
 
@@ -687,7 +687,7 @@ As for improvement suggestions, it can be useful to include a brief comment expl
    implementation(""androidx.fragment:fragment:1.5.6"")
    // TODO remove this when we don't use it anymore
    implementation(""androidx.preference:preference:1.2.0"")",,,,
-mattzcarey/code-review-gpt,https://api.github.com/repos/Kanaries/graphic-walker/issues/comments/1891515273,https://github.com/Kanaries/graphic-walker/pull/291#issuecomment-1891515273,,,,ec638717650f02901a71a5e0c739f93a3d231bbd,c2d16038085d30b5627149a1b5b763bfbcfd33d3,packages/graphic-walker/src/utils/workflow.ts,,"**Risk Level 2 - /home/runner/work/graphic-walker/graphic-walker/packages/graphic-walker/src/utils/workflow.ts**
+mattzcarey/code-review-gpt,https://api.github.com/repos/Kanaries/graphic-walker/issues/comments/1891515273,https://github.com/Kanaries/graphic-walker/pull/291#issuecomment-1891515273,,,ec638717650f02901a71a5e0c739f93a3d231bbd,c2d16038085d30b5627149a1b5b763bfbcfd33d3,packages/graphic-walker/src/utils/workflow.ts,,"**Risk Level 2 - /home/runner/work/graphic-walker/graphic-walker/packages/graphic-walker/src/utils/workflow.ts**
 
 The code changes seem to be safe and do not introduce any breaking changes. However, there are a few areas that could be improved for better readability and maintainability:
 
@@ -766,7 +766,7 @@ if (param.type === ParamType.Field) {
                  },
              ],
          };",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1641207575,https://github.com/fresh-trash-project/fresh-trash-backend/pull/173#discussion_r1641207575,,40.0,,29452eca44c53403ed3d41b1b897e3ae00968dfe,df09ffd0f6f0748c5d2386bb2f0ccb3df072eb46,src/main/java/freshtrash/freshtrashbackend/service/producer/AuctionPublisher.java,,"Your code looks well-structured and follows good practices such as dependency injection, logging, and using constants for messages. Here are a few suggestions for improvement:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1641207575,https://github.com/fresh-trash-project/fresh-trash-backend/pull/173#discussion_r1641207575,,40.0,29452eca44c53403ed3d41b1b897e3ae00968dfe,df09ffd0f6f0748c5d2386bb2f0ccb3df072eb46,src/main/java/freshtrash/freshtrashbackend/service/producer/AuctionPublisher.java,,"Your code looks well-structured and follows good practices such as dependency injection, logging, and using constants for messages. Here are a few suggestions for improvement:
 
 1. **Method Naming Consistency**:
    - Consider renaming `notCompleteBid` to `notifyIncompleteBid` for better readability and consistency with the other method names.
@@ -917,7 +917,7 @@ These changes should make your code more robust, readable, and maintainable.","@
      }
  
      public void completeBid(Auction auction, Long bidMemberId) {",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1641206923,https://github.com/fresh-trash-project/fresh-trash-backend/pull/173#discussion_r1641206923,,19.0,,29452eca44c53403ed3d41b1b897e3ae00968dfe,df09ffd0f6f0748c5d2386bb2f0ccb3df072eb46,src/main/java/freshtrash/freshtrashbackend/dto/constants/AlarmMessage.java,,"Your code looks mostly fine, but here are a few suggestions for improvement:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1641206923,https://github.com/fresh-trash-project/fresh-trash-backend/pull/173#discussion_r1641206923,,19.0,29452eca44c53403ed3d41b1b897e3ae00968dfe,df09ffd0f6f0748c5d2386bb2f0ccb3df072eb46,src/main/java/freshtrash/freshtrashbackend/dto/constants/AlarmMessage.java,,"Your code looks mostly fine, but here are a few suggestions for improvement:
 
 1. **Consistency in Naming**: Ensure that all enum constants follow the same naming convention. For example, `NOT_COMPLETE_AUCTION` should be `NOT_COMPLETED_AUCTION` to match the past tense used in other constants like `COMPLETE_BID_AUCTION`.
 
@@ -981,7 +981,7 @@ public enum AlarmMessage {
      COMPLETE_BID_AUCTION(""경매 [%s]가 낙찰되었습니다.""),
      REQUEST_PAY_AUCTION(""경매 [%s]가 낙찰되었습니다. 24시간 이내에 결제바랍니다."");
      private final String message;",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1189776413,https://github.com/gluon-zone/chain/pull/520#discussion_r1189776413,,148.0,,e6c77808875711085aab90f126713d80052ca1a6,c5744c9409faccf041de9d5d09def259b661c745,x/derivatives/keeper/perpetual_futures_test.go,,"This code patch updates the keeper_test package in some way. The changes involve calling `AddReserveTokensForPosition` and `SubReserveTokensForPosition` functions with an extra argument, `MarketType_FUTURES`. This presumably represents a market type enum value that defines what kind of market these reserve tokens are being used for. 
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1189776413,https://github.com/gluon-zone/chain/pull/520#discussion_r1189776413,,148.0,e6c77808875711085aab90f126713d80052ca1a6,c5744c9409faccf041de9d5d09def259b661c745,x/derivatives/keeper/perpetual_futures_test.go,,"This code patch updates the keeper_test package in some way. The changes involve calling `AddReserveTokensForPosition` and `SubReserveTokensForPosition` functions with an extra argument, `MarketType_FUTURES`. This presumably represents a market type enum value that defines what kind of market these reserve tokens are being used for. 
 
 There is also a change to how `SetReservedCoin` is being called, using a new constructor function `NewReserved` instead of passing in just the amount and denom. This new method presumably creates a new struct with both the amount, denom, and market type specified.
 
@@ -1653,7 +1653,7 @@ I don't see any bugs in this code. Specifically, the tests seem well-formed and 
 +	}
 +	suite.app.DerivativesKeeper.SetParams(suite.ctx, params)
 +}",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1189776926,https://github.com/gluon-zone/chain/pull/520#discussion_r1189776926,,119.0,,e6c77808875711085aab90f126713d80052ca1a6,c5744c9409faccf041de9d5d09def259b661c745,x/derivatives/types/keys.go,,"The code patch changes the `ReservedCoinKeyPrefix` function to take an additional `MarketType` parameter and concatenate it with the input `denom` parameter to form the full key. This change helps differentiate keys for different markets.
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1189776926,https://github.com/gluon-zone/chain/pull/520#discussion_r1189776926,,119.0,e6c77808875711085aab90f126713d80052ca1a6,c5744c9409faccf041de9d5d09def259b661c745,x/derivatives/types/keys.go,,"The code patch changes the `ReservedCoinKeyPrefix` function to take an additional `MarketType` parameter and concatenate it with the input `denom` parameter to form the full key. This change helps differentiate keys for different markets.
 
 From a bug risk perspective, there does not appear to be any immediate issues with the code patch.
 
@@ -1702,7 +1702,7 @@ As for improvement suggestions, adding validation checks to ensure the input par
  }
  
  func AddressPoolMarketCapSnapshotKeyPrefix(height int64) []byte {",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1639543878,https://github.com/fresh-trash-project/fresh-trash-backend/pull/171#discussion_r1639543878,,75.0,,c7de19b175150950853439029c2d2ed0737df38a,d71f24485a3067163868eb342f718e2bc43c3086,src/main/java/freshtrash/freshtrashbackend/config/rabbitmq/BindingConfig.java,,"Your code is well-structured and follows good practices for defining RabbitMQ bindings in a Spring Boot application. Here are a few suggestions to improve readability and maintainability:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1639543878,https://github.com/fresh-trash-project/fresh-trash-backend/pull/171#discussion_r1639543878,,75.0,c7de19b175150950853439029c2d2ed0737df38a,d71f24485a3067163868eb342f718e2bc43c3086,src/main/java/freshtrash/freshtrashbackend/config/rabbitmq/BindingConfig.java,,"Your code is well-structured and follows good practices for defining RabbitMQ bindings in a Spring Boot application. Here are a few suggestions to improve readability and maintainability:
 
 1. **Consistent Formatting**: Ensure consistent formatting throughout the code. For example, align method chaining for better readability.
 
@@ -1944,7 +1944,7 @@ This refactoring introduces a helper method `createBinding` to handle the common
 +        return BindingBuilder.bind(queue).to(exchange).with(routingKey);
      }
  }",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1150480404,https://github.com/gluon-zone/web-apps/pull/416#discussion_r1150480404,,39.0,,47d252cae0951060586aa4f4785b1002cb4aaad3,6ab236b61b7a38af75f7bf67895fdfa69b9b08cb,projects/portal/src/app/views/dialogs/txs/tx-confirm/tx-confirm-dialog.component.ts,,"This is a small code change where a URL path for opening transaction details is being modified. The `onClickOpenTxDetail()` method opens a new window with the transaction details URL. The only modification made is to append `/utilities/` before the existing URL path. There doesn't seem to be any bug risk introduced by this change.
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1150480404,https://github.com/gluon-zone/web-apps/pull/416#discussion_r1150480404,,39.0,47d252cae0951060586aa4f4785b1002cb4aaad3,6ab236b61b7a38af75f7bf67895fdfa69b9b08cb,projects/portal/src/app/views/dialogs/txs/tx-confirm/tx-confirm-dialog.component.ts,,"This is a small code change where a URL path for opening transaction details is being modified. The `onClickOpenTxDetail()` method opens a new window with the transaction details URL. The only modification made is to append `/utilities/` before the existing URL path. There doesn't seem to be any bug risk introduced by this change.
 
 One improvement suggestion could be to use a constant for the `/utilities/` part of the URL path instead of hardcoding it. This can make the code more maintainable in case the URL needs to be changed in the future.
 
@@ -1970,7 +1970,7 @@ Other than that, I don't see any major issues with this code update.","@@ -33,7 
    }
  
    copyClipboard(value: string) {",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1191901236,https://github.com/gluon-zone/chain/pull/525#discussion_r1191901236,,524.0,,2aaa3eaf2190825d7a532b85d878ad1f517c638e,b06ad2a0f367cc40dc7bf3e538c8402391c74abc,x/derivatives/keeper/perpetual_futures_test.go,,"The code patch is related to a TestReportLevyPeriodPerpetualFuturesPosition test in a KeeperTestSuite function. 
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1191901236,https://github.com/gluon-zone/chain/pull/525#discussion_r1191901236,,524.0,2aaa3eaf2190825d7a532b85d878ad1f517c638e,b06ad2a0f367cc40dc7bf3e538c8402391c74abc,x/derivatives/keeper/perpetual_futures_test.go,,"The code patch is related to a TestReportLevyPeriodPerpetualFuturesPosition test in a KeeperTestSuite function. 
 
 In terms of possible bugs, there are no obvious issues with the code patch. However, it is difficult to assess without seeing the complete codebase and understanding the functionality being tested.
 
@@ -2096,7 +2096,7 @@ Overall, since this is just a small patch and there are no apparent issues, the 
  		Markets: []*types.Market{
  			{
  				BaseDenom:  ""uatom"",",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/hongbo-miao/hongbomiao.com/pulls/comments/1151037241,https://github.com/hongbo-miao/hongbomiao.com/pull/7716#discussion_r1151037241,,5617.0,,9f432a42ab2a88cfbbef1d4c12679b75ded4290d,8117f5f5fc71119f4234a3dfa664c0b25dd2f6ea,web-cypress/package-lock.json,,"The code patch seems to be updating the version of `eslint-plugin-cypress` from 2.12.1 to 2.13.1. This appears to be a minor version update and should not introduce major changes, so the risk of bugs is low. The improvement suggestion would be to ensure that all packages in the project are kept up-to-date to prevent potential security vulnerabilities or performance issues.","@@ -12,7 +12,7 @@
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/hongbo-miao/hongbomiao.com/pulls/comments/1151037241,https://github.com/hongbo-miao/hongbomiao.com/pull/7716#discussion_r1151037241,,5617.0,9f432a42ab2a88cfbbef1d4c12679b75ded4290d,8117f5f5fc71119f4234a3dfa664c0b25dd2f6ea,web-cypress/package-lock.json,,"The code patch seems to be updating the version of `eslint-plugin-cypress` from 2.12.1 to 2.13.1. This appears to be a minor version update and should not introduce major changes, so the risk of bugs is low. The improvement suggestion would be to ensure that all packages in the project are kept up-to-date to prevent potential security vulnerabilities or performance issues.","@@ -12,7 +12,7 @@
          ""eslint"": ""8.36.0"",
          ""eslint-config-airbnb-base"": ""15.0.0"",
          ""eslint-config-prettier"": ""8.8.0"",
@@ -2172,7 +2172,7 @@ anc95/ChatGPT-CodeReview,https://api.github.com/repos/hongbo-miao/hongbomiao.com
        ""dev"": true,
        ""requires"": {
          ""@cypress/request"": ""^2.88.10"",",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1626310017,https://github.com/fresh-trash-project/fresh-trash-backend/pull/161#discussion_r1626310017,,52.0,,e6faf1129e238e3204d5030f0845441e408d28a9,2030f20e5610d1e245c4a870e9234b9af745d412,src/main/java/freshtrash/freshtrashbackend/security/SecurityConfig.java,,"Your code snippet appears to be part of a Spring Security configuration. Here are a few suggestions for improvement:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1626310017,https://github.com/fresh-trash-project/fresh-trash-backend/pull/161#discussion_r1626310017,,52.0,e6faf1129e238e3204d5030f0845441e408d28a9,2030f20e5610d1e245c4a870e9234b9af745d412,src/main/java/freshtrash/freshtrashbackend/security/SecurityConfig.java,,"Your code snippet appears to be part of a Spring Security configuration. Here are a few suggestions for improvement:
 
 1. **Regex Simplification**: The regex patterns can be simplified for better readability and maintainability.
 2. **Consistent Use of `permitAll` and `hasAnyRole`**: Ensure that the use of `permitAll` and `hasAnyRole` is consistent and logical.
@@ -2220,7 +2220,7 @@ These changes should make your regex patterns more readable and maintainable whi
                          .permitAll()
                          .anyRequest()
                          .hasAnyRole(""USER"", ""ADMIN""))",,,,
-mattzcarey/code-review-gpt,https://api.github.com/repos/pass-culture/data-gcp/issues/comments/2548481880,https://github.com/pass-culture/data-gcp/pull/3620#issuecomment-2548481880,,,,8befb9f1e6f949feb3649e2e0af6d66309993185,5e1bf170b09d6e6320e3bb1e7efad8b1ae0d938d,jobs/etl_jobs/external/dms/main.py,,"**Risk Level 3 - /home/runner/work/data-gcp/data-gcp/jobs/etl_jobs/external/dms/main.py**
+mattzcarey/code-review-gpt,https://api.github.com/repos/pass-culture/data-gcp/issues/comments/2548481880,https://github.com/pass-culture/data-gcp/pull/3620#issuecomment-2548481880,,,8befb9f1e6f949feb3649e2e0af6d66309993185,5e1bf170b09d6e6320e3bb1e7efad8b1ae0d938d,jobs/etl_jobs/external/dms/main.py,,"**Risk Level 3 - /home/runner/work/data-gcp/data-gcp/jobs/etl_jobs/external/dms/main.py**
 
 1. There is a typo in the `fetch_dms` function call for the 'pro' target: `targer` should be `target`. This will cause a runtime error. 
 2. Consider adding error handling for network requests to handle potential failures gracefully.","@@ -1,55 +1,62 @@
@@ -2435,7 +2435,7 @@ mattzcarey/code-review-gpt,https://api.github.com/repos/pass-culture/data-gcp/is
          end_cursor = """"
          query_body = get_query_body(demarche_id, dms_query, """", updated_since)
          has_next_page = True",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/QuickSwap/interface-v2/pulls/comments/1161591649,https://github.com/QuickSwap/interface-v2/pull/742#discussion_r1161591649,,415.0,,15c38bbb35855cfc8e0482b3df470b2fb19ce634,0a29cb26327b5659801d0d05881152807408fff0,src/state/stake/hooks.ts,,"The code appears to be implementing the useFilteredSyrupInfo function. The changes involve updating the useUSDCPrices hook to use the newly created useUSDCPricesFromAddresses hook for consistency and improved readability, as well as some minor updates to improve performance, such as avoiding duplicate calls to useUSDCPricesToken within a loop. It seems unlikely that there are any major bug risks or issues based on the changes made, but other improvements could potentially include further optimization of the function for better performance or clarity, depending on the specific needs of the project.","@@ -32,7 +32,11 @@ import {
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/QuickSwap/interface-v2/pulls/comments/1161591649,https://github.com/QuickSwap/interface-v2/pull/742#discussion_r1161591649,,415.0,15c38bbb35855cfc8e0482b3df470b2fb19ce634,0a29cb26327b5659801d0d05881152807408fff0,src/state/stake/hooks.ts,,"The code appears to be implementing the useFilteredSyrupInfo function. The changes involve updating the useUSDCPrices hook to use the newly created useUSDCPricesFromAddresses hook for consistency and improved readability, as well as some minor updates to improve performance, such as avoiding duplicate calls to useUSDCPricesToken within a loop. It seems unlikely that there are any major bug risks or issues based on the changes made, but other improvements could potentially include further optimization of the function for better performance or clarity, depending on the specific needs of the project.","@@ -32,7 +32,11 @@ import {
    useNewQUICKContract,
    useQUICKContract,
  } from 'hooks/useContract';
@@ -2671,7 +2671,7 @@ anc95/ChatGPT-CodeReview,https://api.github.com/repos/QuickSwap/interface-v2/pul
  }
  
  export function useUSDRewardsandFees(",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1623330397,https://github.com/fresh-trash-project/fresh-trash-backend/pull/152#discussion_r1623330397,,41.0,,a86360484b35fddbe54f8c487fe5dd08e7d8a961,5db17dc07aa5bfe6463e9bed4fea644ea742dd08,src/main/java/freshtrash/freshtrashbackend/service/alarm/UserFlagChatAlarm.java,,"Your code is generally well-structured, but there are a few improvements you could make for better readability and maintainability:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1623330397,https://github.com/fresh-trash-project/fresh-trash-backend/pull/152#discussion_r1623330397,,41.0,a86360484b35fddbe54f8c487fe5dd08e7d8a961,5db17dc07aa5bfe6463e9bed4fea644ea742dd08,src/main/java/freshtrash/freshtrashbackend/service/alarm/UserFlagChatAlarm.java,,"Your code is generally well-structured, but there are a few improvements you could make for better readability and maintainability:
 
 1. **Use `final` for Constants**: Mark the `FLAG_LIMIT` as `final` since it is a constant.
 2. **Consistent Formatting**: Ensure consistent formatting for better readability.
@@ -2800,7 +2800,7 @@ These changes should help improve the maintainability and readability of your co
      }
  
      @Override",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1150476217,https://github.com/gluon-zone/web-apps/pull/416#discussion_r1150476217,,96.0,,47d252cae0951060586aa4f4785b1002cb4aaad3,6ab236b61b7a38af75f7bf67895fdfa69b9b08cb,projects/portal/src/app/views/apps/app-utils/app-utils.component.html,,"Overall, the code looks fine. Below are some suggestions for improvement:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1150476217,https://github.com/gluon-zone/web-apps/pull/416#discussion_r1150476217,,96.0,47d252cae0951060586aa4f4785b1002cb4aaad3,6ab236b61b7a38af75f7bf67895fdfa69b9b08cb,projects/portal/src/app/views/apps/app-utils/app-utils.component.html,,"Overall, the code looks fine. Below are some suggestions for improvement:
 
 - Use consistent naming conventions throughout the codebase.
 - Add comments to the code to explain what each section/component does.
@@ -2931,7 +2931,7 @@ As for bug risks, without context on how the code is used or is integrated with 
        <!-- Sidebar content here -->
        <app-search-tool class=""w-full""></app-search-tool>
        <li>",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/QuickSwap/interface-v2/pulls/comments/1192058563,https://github.com/QuickSwap/interface-v2/pull/802#discussion_r1192058563,,62.0,,4c95959687e2410acdcebb6ca781e5c87f56999d,849bf14272dcd48f184b1b59e64b74f7306a9411,src/config/dogechain.json,,"Without additional context, it's difficult to fully review the code patch. However, based on the provided snippet, here are some observations:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/QuickSwap/interface-v2/pulls/comments/1192058563,https://github.com/QuickSwap/interface-v2/pull/802#discussion_r1192058563,,62.0,4c95959687e2410acdcebb6ca781e5c87f56999d,849bf14272dcd48f184b1b59e64b74f7306a9411,src/config/dogechain.json,,"Without additional context, it's difficult to fully review the code patch. However, based on the provided snippet, here are some observations:
 
 - The patch is adding a new key-value pair `""perps"": {""available"": false}` to the JSON object.
 - It seems unlikely that there are any bug risks associated with this code change since it's just adding a new entry to an existing JSON object and doesn't involve any complex logic.
@@ -2957,7 +2957,7 @@ anc95/ChatGPT-CodeReview,https://api.github.com/repos/QuickSwap/interface-v2/pul
 -    ""available"": false
    }
  }",,,,
-mattzcarey/code-review-gpt,https://api.github.com/repos/Kanaries/graphic-walker/issues/comments/2051451460,https://github.com/Kanaries/graphic-walker/pull/371#issuecomment-2051451460,,,,cdae200ef864ee31574f7737b40b094ce90ab5ed,bc39b4545cf68c81d90ea884a2233286620eba90,packages/graphic-walker/src/lib/vega.ts,,"**Risk Level 2 - /home/runner/work/graphic-walker/graphic-walker/packages/graphic-walker/src/lib/vega.ts**
+mattzcarey/code-review-gpt,https://api.github.com/repos/Kanaries/graphic-walker/issues/comments/2051451460,https://github.com/Kanaries/graphic-walker/pull/371#issuecomment-2051451460,,,cdae200ef864ee31574f7737b40b094ce90ab5ed,bc39b4545cf68c81d90ea884a2233286620eba90,packages/graphic-walker/src/lib/vega.ts,,"**Risk Level 2 - /home/runner/work/graphic-walker/graphic-walker/packages/graphic-walker/src/lib/vega.ts**
 
 The code changes are generally safe and follow good practices. However, there are a few areas that could be improved for readability and maintainability:
 
@@ -3050,7 +3050,7 @@ const result = new Array(rowRepeatFields.length * colRepeatFields.length);
          }
  
          let index = 0;",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1156858575,https://github.com/gluon-zone/web-apps/pull/448#discussion_r1156858575,,32.0,,5f79710effc74a953136506535e96fcc891c76d8,575feef40cbec89e2ff6ec13c4905643732d5421,projects/portal/src/app/pages/tools/wallet-tool/wallet-tool.component.ts,,"This code patch introduces a new method to the `WalletToolComponent` class called `onDisconnectWallet()` that calls `disconnectWallet()` of the `walletApplicationService`.
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1156858575,https://github.com/gluon-zone/web-apps/pull/448#discussion_r1156858575,,32.0,5f79710effc74a953136506535e96fcc891c76d8,575feef40cbec89e2ff6ec13c4905643732d5421,projects/portal/src/app/pages/tools/wallet-tool/wallet-tool.component.ts,,"This code patch introduces a new method to the `WalletToolComponent` class called `onDisconnectWallet()` that calls `disconnectWallet()` of the `walletApplicationService`.
 
 From this code snippet, it is difficult to determine if there are any bugs or risk, as we don't have the full context of the application. However, it's suggested to properly handle and communicate any errors that `disconnectWallet()` could throw.
 
@@ -3107,7 +3107,7 @@ As for improvement suggestions, you could consider adding some user feedback to 
    }
  
    ngOnInit(): void {}",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/clickcaramel/PolyglotRocks/pulls/comments/1184851643,https://github.com/clickcaramel/PolyglotRocks/pull/45#discussion_r1184851643,,262.0,,c1f081799a5f6262e297081de620608f9a4b2d88,983d78da9bfbc72f26eb705758690f3abc5af7a6,tests/translate.spec.sh,,"The code patch includes changes to a shell script that handles translations for an application, specifically in how it adds translator comments and handles special characters in translations. 
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/clickcaramel/PolyglotRocks/pulls/comments/1184851643,https://github.com/clickcaramel/PolyglotRocks/pull/45#discussion_r1184851643,,262.0,c1f081799a5f6262e297081de620608f9a4b2d88,983d78da9bfbc72f26eb705758690f3abc5af7a6,tests/translate.spec.sh,,"The code patch includes changes to a shell script that handles translations for an application, specifically in how it adds translator comments and handles special characters in translations. 
 
 The changes appear to be focused on adding more context to manual translations, which is positive. However, there is a typo in one of the translator comments in the updated code (should be ""Need more context!"" instead of ""Need too more context!""). The change to handle special characters also appears to be working as intended. 
 
@@ -3130,7 +3130,7 @@ One improvement suggestion would be to consider adding error handling or logging
 -}
 +    assert_multiple ' ""Zeichenkette mit\nspeziellen\n \""Zeichen\"", jetzt"";' ' ""Zeichenkette mit\nspeziellem\n \""Zeichen\"", jetzt"";' ' ""Seil mit\nspeziell\n \""Zeichen\"", jetzt"";' ' ""Seil mit\nspeziellen\n \""Zeichen\"", jetzt"";' ""$translation""
 +}",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1147096902,https://github.com/gluon-zone/web-apps/pull/322#discussion_r1147096902,,114.0,,ff1ed49c6a624b77bfee17dd871be9570f35dd1f,d151de716c95177a38bb947b11eca98631ef951f,projects/explorer/editions/ununifi/launch/ununifi-iya-pocv1/firebase-hosting/config.js,,"This code defines constants related to various ports, domain names, chain settings, Bech32 prefixes, and faucet configurations. 
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1147096902,https://github.com/gluon-zone/web-apps/pull/322#discussion_r1147096902,,114.0,ff1ed49c6a624b77bfee17dd871be9570f35dd1f,d151de716c95177a38bb947b11eca98631ef951f,projects/explorer/editions/ununifi/launch/ununifi-iya-pocv1/firebase-hosting/config.js,,"This code defines constants related to various ports, domain names, chain settings, Bech32 prefixes, and faucet configurations. 
 
 Improvement suggestion:
 
@@ -3346,7 +3346,7 @@ Overall, the code seems straightforward and concise.","@@ -0,0 +1,114 @@
        },
        developer: {
          enabled: true,",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/clickcaramel/PolyglotRocks/pulls/comments/1155810107,https://github.com/clickcaramel/PolyglotRocks/pull/36#discussion_r1155810107,,284.0,,53743bd62442f91414bc34b4e9abcb11edc34f1c,8775498fc4dba277a06882ab7c643f59b32a46eb,bin/polyglot,,"The code patch seems to be making a change in the behavior of the files_to_translate variable. Instead of setting it to ""Localizable.strings"" when no value is provided for $files_to_translate, it searches for all .strings files in the specified project_path using the find command, filters out unique basenames, and concatenates them with comma as separator.
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/clickcaramel/PolyglotRocks/pulls/comments/1155810107,https://github.com/clickcaramel/PolyglotRocks/pull/36#discussion_r1155810107,,284.0,53743bd62442f91414bc34b4e9abcb11edc34f1c,8775498fc4dba277a06882ab7c643f59b32a46eb,bin/polyglot,,"The code patch seems to be making a change in the behavior of the files_to_translate variable. Instead of setting it to ""Localizable.strings"" when no value is provided for $files_to_translate, it searches for all .strings files in the specified project_path using the find command, filters out unique basenames, and concatenates them with comma as separator.
 
 As for bug risk, one issue that could arise from this code is if there are multiple Localizable.strings files present in different subdirectories of the project_path. This would cause the xargs command to output duplicate filenames which would not get filtered by the uniq command, leading to duplicated entries in the files_to_translate variable. To avoid this, the find command could include the -maxdepth 1 option to limit the search to the top level of the project path.
 
@@ -3373,7 +3373,7 @@ Regarding improvement suggestions, it would be helpful to add error checking for
  fi
  
  OLDIFS=$IFS",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1188494206,https://github.com/gluon-zone/chain/pull/516#discussion_r1188494206,,193.0,,6bb3865e4de1d2568e05d893f1768178e6822f2e,b7e96aec3121d3f3c0db7051575e9e64b9bff26b,go.mod,,"Based on the provided code patch, it seems that the following changes have been made:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1188494206,https://github.com/gluon-zone/chain/pull/516#discussion_r1188494206,,193.0,6bb3865e4de1d2568e05d893f1768178e6822f2e,b7e96aec3121d3f3c0db7051575e9e64b9bff26b,go.mod,,"Based on the provided code patch, it seems that the following changes have been made:
 - Removed `cosmossdk.io/simapp v0.0.0-20230224204036-a6adb0821462` and `github.com/tendermint/tm-db v0.6.7` from the dependencies.
 - Added `github.com/ununifi/cosmos-sdk v0.47.1` as a replacement for `github.com/cosmos/cosmos-sdk`.
 - Replaced `github.com/gogo/protobuf` with `github.com/regen-network/protobuf v1.3.3-alpha.regen.1` in the `replace` section.
@@ -3423,7 +3423,7 @@ Without more context or information about the specific project and requirements,
  
  	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
  ",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/bingryan/WeChatAI/pulls/comments/1184791262,https://github.com/bingryan/WeChatAI/pull/38#discussion_r1184791262,,129.0,,a1fe59e3a3b441fe29cf1154a7e8829bca2cb9dc,6d7de7a7f6907f156bbd93786d547fac80335801,pnpm-lock.yaml,,"Based on the provided code patch, it's difficult to determine whether there are any bugs or potential issues. The patch seems to be updating the versions of various dependencies in a project. However, a couple of improvement suggestions could be:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/bingryan/WeChatAI/pulls/comments/1184791262,https://github.com/bingryan/WeChatAI/pull/38#discussion_r1184791262,,129.0,a1fe59e3a3b441fe29cf1154a7e8829bca2cb9dc,6d7de7a7f6907f156bbd93786d547fac80335801,pnpm-lock.yaml,,"Based on the provided code patch, it's difficult to determine whether there are any bugs or potential issues. The patch seems to be updating the versions of various dependencies in a project. However, a couple of improvement suggestions could be:
 
 1. Consider adding some comments describing the changes included in this patch.
 2. Check whether these dependency updates may introduce any breaking changes in the application and ensure that the tests for the project still pass if any.","@@ -71,7 +71,7 @@ dependencies:
@@ -5426,7 +5426,7 @@ anc95/ChatGPT-CodeReview,https://api.github.com/repos/bingryan/WeChatAI/pulls/co
    registry.npmmirror.com/yn/3.1.1:
      resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/yn/-/yn-3.1.1.tgz}
      name: yn",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/QuickSwap/interface-v2/pulls/comments/1174600934,https://github.com/QuickSwap/interface-v2/pull/775#discussion_r1174600934,,50.0,,51f0a3682238f68a71688a0bf097fb030ea1d4f3,bd63a0414ae4d159c3780b9af4abe4c9f294ca8b,src/hooks/index.ts,,"Overall, the code patch looks good. Here are some suggestions I have:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/QuickSwap/interface-v2/pulls/comments/1174600934,https://github.com/QuickSwap/interface-v2/pull/775#discussion_r1174600934,,50.0,51f0a3682238f68a71688a0bf097fb030ea1d4f3,bd63a0414ae4d159c3780b9af4abe4c9f294ca8b,src/hooks/index.ts,,"Overall, the code patch looks good. Here are some suggestions I have:
 
 - Remove the unused variable `ethereum`.
 - Consider using optional chaining operator in line 3 (`const { ethereum } = window as any;`) to avoid a runtime error if `window` does not have an `ethereum` property.
@@ -5499,7 +5499,7 @@ As for bug risks, I cannot see any obvious ones in this code. However, without t
  
    return {
      ...context,",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1191900990,https://github.com/gluon-zone/chain/pull/525#discussion_r1191900990,,32.0,,2aaa3eaf2190825d7a532b85d878ad1f517c638e,b06ad2a0f367cc40dc7bf3e538c8402391c74abc,x/derivatives/keeper/params_test.go,,"The code changes appear to modify the ImaginaryFundingRateProportionalCoefficient parameter value for a PerpetualFuturesParams struct. 
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1191900990,https://github.com/gluon-zone/chain/pull/525#discussion_r1191900990,,32.0,2aaa3eaf2190825d7a532b85d878ad1f517c638e,b06ad2a0f367cc40dc7bf3e538c8402391c74abc,x/derivatives/keeper/params_test.go,,"The code changes appear to modify the ImaginaryFundingRateProportionalCoefficient parameter value for a PerpetualFuturesParams struct. 
 
 Since I cannot see the rest of the code, it is difficult to know whether this change poses any risks or introduces improvements. 
 
@@ -5525,7 +5525,7 @@ However, one thing to note is that changing the coefficient from 0.0005 to 0.05 
  		Markets: []*types.Market{
  			{
  				BaseDenom:  ""uatom"",",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1145610365,https://github.com/gluon-zone/chain/pull/454#discussion_r1145610365,,23.0,,a882b585d967db399cade2078e711fa9b4e9936c,147d1d40516b7873f63c7f9f1b48fea97d637441,.github/workflows/cr.yml,,"Overall the code patch looks good, but I have a few suggestions for improvement:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1145610365,https://github.com/gluon-zone/chain/pull/454#discussion_r1145610365,,23.0,a882b585d967db399cade2078e711fa9b4e9936c,147d1d40516b7873f63c7f9f1b48fea97d637441,.github/workflows/cr.yml,,"Overall the code patch looks good, but I have a few suggestions for improvement:
 
 1. The `name` field is not required for workflow files and can be removed.
 
@@ -5581,7 +5581,7 @@ Other than that, there are no obvious bug risks in this code patch.","@@ -0,0 +1
      runs-on: ubuntu-latest
      steps:
        - uses: anc95/ChatGPT-CodeReview@main",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1639543374,https://github.com/fresh-trash-project/fresh-trash-backend/pull/171#discussion_r1639543374,,49.0,,c7de19b175150950853439029c2d2ed0737df38a,d71f24485a3067163868eb342f718e2bc43c3086,src/main/java/freshtrash/freshtrashbackend/aspect/BrokerSendAckAspect.java,,"Here are some suggestions to improve your code:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1639543374,https://github.com/fresh-trash-project/fresh-trash-backend/pull/171#discussion_r1639543374,,49.0,c7de19b175150950853439029c2d2ed0737df38a,d71f24485a3067163868eb342f718e2bc43c3086,src/main/java/freshtrash/freshtrashbackend/aspect/BrokerSendAckAspect.java,,"Here are some suggestions to improve your code:
 
 1. **Exception Handling**: Instead of catching `Throwable`, catch specific exceptions to avoid handling errors that you might not want to handle (like `OutOfMemoryError`).
 
@@ -5733,7 +5733,7 @@ public class BrokerSendAckAspect {
              }
          }
      }",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/QuickSwap/interface-v2/pulls/comments/1192058338,https://github.com/QuickSwap/interface-v2/pull/802#discussion_r1192058338,,57.0,,4c95959687e2410acdcebb6ca781e5c87f56999d,849bf14272dcd48f184b1b59e64b74f7306a9411,.env,,"The code patch appears to be a simple addition of a new environment variable. 
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/QuickSwap/interface-v2/pulls/comments/1192058338,https://github.com/QuickSwap/interface-v2/pull/802#discussion_r1192058338,,57.0,4c95959687e2410acdcebb6ca781e5c87f56999d,849bf14272dcd48f184b1b59e64b74f7306a9411,.env,,"The code patch appears to be a simple addition of a new environment variable. 
 
 There doesn't seem to be any bug risk associated with this change, as it is simply adding a URL.
 
@@ -5755,7 +5755,7 @@ As for improvement suggestions, it would be good to ensure that all environment 
  REACT_APP_INTRACT_KEY=""64395bfd8bf642baf0147eab""
  REACT_APP_SAFE_URL=""https://zksafe.quickswap.exchange/""
 -REACT_APP_PERPS_URL=""https://perps.quickswap.exchange/#/trade""",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/pokt-network/pocket/pulls/comments/1160328372,https://github.com/pokt-network/pocket/pull/652#discussion_r1160328372,,24.0,,1911fb1ad6f4c2e0fa0214ff39318e26c3a0d201,c9f18a38f7eaa521dc9be5e477fe860fea301fe8,utility/doc/CHANGELOG.md,,"Overall, the code patch seems to be well-documented and easy to understand. Here are a few suggestions that might improve the patch:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/pokt-network/pocket/pulls/comments/1160328372,https://github.com/pokt-network/pocket/pull/652#discussion_r1160328372,,24.0,1911fb1ad6f4c2e0fa0214ff39318e26c3a0d201,c9f18a38f7eaa521dc9be5e477fe860fea301fe8,utility/doc/CHANGELOG.md,,"Overall, the code patch seems to be well-documented and easy to understand. Here are a few suggestions that might improve the patch:
 
 1. Clearer error descriptions: You could provide more descriptive error names or messages for `GetPrevBlockByzantineValidators` and `ProposalBlockNotSet` errors to give more context on their occurrences.
 2. Logging level: Make sure that log statements added in `CreateProposalBlock` and `ApplyBlock` have appropriate logging levels (e.g., debug or info). This helps in controlling verbosity when troubleshooting issues.
@@ -5792,7 +5792,7 @@ Since I don't have access to the full code, I cannot point out any functionality
  
  - Renamed `CreateAndApplyProposalBlock` to `CreateProposalBlock`
  - Added `GetPrevBlockByzantineValidators` and `ProposalBlockNotSet` errors",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1161525656,https://github.com/gluon-zone/web-apps/pull/459#discussion_r1161525656,,9.0,,ffd07a32db830543375fc741f54fa192b930d1ce,8e0a58f8149897895c6c7c23cf8d13be53741691,projects/portal/src/app/views/dialogs/delegate/redelegate-form-dialog/redelegate-form-dialog.component.html,,"The code change replaces the `div` markup for a card with a new version that adds an overflow-y scroll and a close button in mobile view. The suggested code review depends on the larger context of the application, but some improvements and considerations might be:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1161525656,https://github.com/gluon-zone/web-apps/pull/459#discussion_r1161525656,,9.0,ffd07a32db830543375fc741f54fa192b930d1ce,8e0a58f8149897895c6c7c23cf8d13be53741691,projects/portal/src/app/views/dialogs/delegate/redelegate-form-dialog/redelegate-form-dialog.component.html,,"The code change replaces the `div` markup for a card with a new version that adds an overflow-y scroll and a close button in mobile view. The suggested code review depends on the larger context of the application, but some improvements and considerations might be:
 
 - If the `max-h-screen` height value is used to prevent the card from overflowing too much, it could conflict with other elements on the page. A better approach to ensure the heights don't conflict could be to use the `vh` unit instead of `screen`.
 - The `onClickClose()` method called by the close button should have safe checks against undefined or null values before executing its action.
@@ -5819,7 +5819,7 @@ anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/com
    <div class=""flex flex-col items-end md:hidden"">
      <button mat-icon-button class=""mt-2 mr-2"" (click)=""onClickClose()"">
        <mat-icon>close</mat-icon>",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1641207396,https://github.com/fresh-trash-project/fresh-trash-backend/pull/173#discussion_r1641207396,,104.0,,29452eca44c53403ed3d41b1b897e3ae00968dfe,df09ffd0f6f0748c5d2386bb2f0ccb3df072eb46,src/main/java/freshtrash/freshtrashbackend/service/AuctionService.java,,"Your code looks generally well-structured, but here are a few suggestions for improvement:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1641207396,https://github.com/fresh-trash-project/fresh-trash-backend/pull/173#discussion_r1641207396,,104.0,29452eca44c53403ed3d41b1b897e3ae00968dfe,df09ffd0f6f0748c5d2386bb2f0ccb3df072eb46,src/main/java/freshtrash/freshtrashbackend/service/AuctionService.java,,"Your code looks generally well-structured, but here are a few suggestions for improvement:
 
 1. **Logging**: Ensure that your log messages provide enough context to be useful during debugging.
 2. **Error Handling**: Consider adding error handling for the new methods.
@@ -5911,7 +5911,7 @@ These changes should make your code more robust and easier to debug and maintain
      }
  
      public List<Auction> getEndedAuctions() {",,,,
-mattzcarey/code-review-gpt,https://api.github.com/repos/pass-culture/data-gcp/issues/comments/2504391937,https://github.com/pass-culture/data-gcp/pull/3509#issuecomment-2504391937,,,,fc95962b2094e89935a4ad089ada8d57652d4d4b,39bb2abc1e61ea8c28122e1d4bf22a506f96deab,jobs/ml_jobs/artist_linkage/match_artists_on_wikidata.py,,"**Risk Level 2 - /home/runner/work/data-gcp/data-gcp/jobs/ml_jobs/artist_linkage/match_artists_on_wikidata.py**
+mattzcarey/code-review-gpt,https://api.github.com/repos/pass-culture/data-gcp/issues/comments/2504391937,https://github.com/pass-culture/data-gcp/pull/3509#issuecomment-2504391937,,,fc95962b2094e89935a4ad089ada8d57652d4d4b,39bb2abc1e61ea8c28122e1d4bf22a506f96deab,jobs/ml_jobs/artist_linkage/match_artists_on_wikidata.py,,"**Risk Level 2 - /home/runner/work/data-gcp/data-gcp/jobs/ml_jobs/artist_linkage/match_artists_on_wikidata.py**
 
 1. The function `load_wikidata` constructs a file path using string interpolation. Ensure that `get_last_date_from_bucket` returns a valid date string to avoid path errors. Consider using `os.path.join` for path construction to handle different OS path separators.
 
@@ -5988,7 +5988,7 @@ latest_path = os.path.join(wiki_base_path, get_last_date_from_bucket(wiki_base_p
      return pd.read_parquet(latest_path)
  
  ",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1172111147,https://github.com/gluon-zone/web-apps/pull/486#discussion_r1172111147,,153.0,,cf0cfcc5a3d358418799a46023700c9f1d898c68,61776a716c235053d7385cc2b64b12d90b7f3312,projects/portal/src/app/views/nft-pawnshop/borrowers/borrower-nfts/borrower-nft/borrower-nft.component.html,,"The code patch seems to be adding breadcrumbs and updating the UI of a listing page for an NFT. Here are some suggestions:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/comments/1172111147,https://github.com/gluon-zone/web-apps/pull/486#discussion_r1172111147,,153.0,cf0cfcc5a3d358418799a46023700c9f1d898c68,61776a716c235053d7385cc2b64b12d90b7f3312,projects/portal/src/app/views/nft-pawnshop/borrowers/borrower-nfts/borrower-nft/borrower-nft.component.html,,"The code patch seems to be adding breadcrumbs and updating the UI of a listing page for an NFT. Here are some suggestions:
 
 1. Consider using `aria-label` or `title` attribute for the breadcrumb links to enhance accessibility.
 2. In line 18, when using optional chaining with `listingInfo?.state`, consider providing a default value instead of using `NOT_LISTING`, which could be misleading. For example, `LISTING_STATUS_UNKNOWN`.
@@ -6056,7 +6056,7 @@ anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/web-apps/pulls/com
              </tr>
              <tr>
                <td>Bid Token</td>",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1197710618,https://github.com/gluon-zone/chain/pull/540#discussion_r1197710618,,47.0,,7f3c8a5d0a8bf6b1b51449847c2263e9c6b82d3f,49fa98885a5d780c927182eac23552c3209b663c,Dockerfile,,"The code patch contains changes to a Dockerfile. Overall, it appears that the changes are adding additional dependencies and updating an existing dependency version. It also adds some new build options for the `cosmwasm` package.
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1197710618,https://github.com/gluon-zone/chain/pull/540#discussion_r1197710618,,47.0,7f3c8a5d0a8bf6b1b51449847c2263e9c6b82d3f,49fa98885a5d780c927182eac23552c3209b663c,Dockerfile,,"The code patch contains changes to a Dockerfile. Overall, it appears that the changes are adding additional dependencies and updating an existing dependency version. It also adds some new build options for the `cosmwasm` package.
 
 One improvement suggestion is to use a specific version tag instead of always pulling the latest version of `alpine:edge`, which can lead to unpredictable behavior if there are breaking changes in the base image.
 
@@ -6126,7 +6126,7 @@ Regarding bugs or issues, it's hard to say without further context about what th
  
  # Install ca-certificates
  RUN apk add --update ca-certificates",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1192157791,https://github.com/gluon-zone/chain/pull/468#discussion_r1192157791,,23.0,,1f79bd6ccfc40dd6427674375b3262c96e3d332d,5d768326d426fca3dd974402612373eea1e51d6b,.gitignore,,"This code patch simply adds a newline at the end of the file, correcting a potential issue with some text editors that may have trouble displaying files without a newline character at the end. There don't appear to be any bug risks introduced by this change.
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1192157791,https://github.com/gluon-zone/chain/pull/468#discussion_r1192157791,,23.0,1f79bd6ccfc40dd6427674375b3262c96e3d332d,5d768326d426fca3dd974402612373eea1e51d6b,.gitignore,,"This code patch simply adds a newline at the end of the file, correcting a potential issue with some text editors that may have trouble displaying files without a newline character at the end. There don't appear to be any bug risks introduced by this change.
 
 As for improvement suggestions, it's always good practice to consistently use either spaces or tabs for indentation throughout the entire codebase. Additionally, including comments to explain any complex code segments or logic can help make your code more readable and maintainable for yourself and others who may work on it in the future.","@@ -20,4 +20,4 @@ build
  
@@ -6144,7 +6144,7 @@ As for improvement suggestions, it's always good practice to consistently use ei
  docs/node_modules
  docs/.vuepress/dist
 +data",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1641207309,https://github.com/fresh-trash-project/fresh-trash-backend/pull/173#discussion_r1641207309,,25.0,,29452eca44c53403ed3d41b1b897e3ae00968dfe,df09ffd0f6f0748c5d2386bb2f0ccb3df072eb46,src/main/java/freshtrash/freshtrashbackend/service/AuctionEventService.java,,"Your code is generally well-structured and follows good practices. Here are a few suggestions for improvement:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1641207309,https://github.com/fresh-trash-project/fresh-trash-backend/pull/173#discussion_r1641207309,,25.0,29452eca44c53403ed3d41b1b897e3ae00968dfe,df09ffd0f6f0748c5d2386bb2f0ccb3df072eb46,src/main/java/freshtrash/freshtrashbackend/service/AuctionEventService.java,,"Your code is generally well-structured and follows good practices. Here are a few suggestions for improvement:
 
 1. **Exception Handling**: Ensure that you handle potential exceptions that might occur during the execution of `completeAuction()`. This will help in maintaining robustness.
 
@@ -6243,7 +6243,7 @@ These changes should make your code more robust, maintainable, and easier to deb
          List<Auction> auctions = auctionService.getEndedAuctions();
          // 입찰자 여부를 확인하고 입찰자가 없으면 구매자에게 알림, 있으면 판매자에게 알림
          auctions.forEach(completeBidAuctionAlarm::sendAlarm);",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/yuriykulikov/AlarmClock/pulls/comments/1264660912,https://github.com/yuriykulikov/AlarmClock/pull/587#discussion_r1264660912,,89.0,,40562710ffc15362568c6f51802a39cecb9bbdc9,0321ce23870cfe1c3a1bda33b3ea5357a67b2ec4,app/src/test/java/com/better/alarm/AlertServiceTest.kt,,"From the given code patch, here are some observations and suggestions for improvement:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/yuriykulikov/AlarmClock/pulls/comments/1264660912,https://github.com/yuriykulikov/AlarmClock/pull/587#discussion_r1264660912,,89.0,40562710ffc15362568c6f51802a39cecb9bbdc9,0321ce23870cfe1c3a1bda33b3ea5357a67b2ec4,app/src/test/java/com/better/alarm/AlertServiceTest.kt,,"From the given code patch, here are some observations and suggestions for improvement:
 
 1. In the line `prefs = mockk(relaxed = true),`, there is a trailing comma. The trailing comma should be removed as it may cause a compilation error in some programming languages.
 
@@ -6362,7 +6362,7 @@ Remember that a comprehensive code review takes into account the entire codebase
 +    verify { player.setDataSource(""custom"") }
 +  }
  }",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/clickcaramel/PolyglotRocks/pulls/comments/1207484667,https://github.com/clickcaramel/PolyglotRocks/pull/49#discussion_r1207484667,,408.0,,169a59bf7c8d2a84c1530d77a5ee9fecc8bd7555,5a30ebc6cf4e61e69b3d15d095abe4a7875b2b9e,bin/polyglot,,"The code patch adds two new regex patterns to handle developer comments and comment marks in the localization files. It also updates the command for getting the full content of the base file to exclude lines containing these new patterns.
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/clickcaramel/PolyglotRocks/pulls/comments/1207484667,https://github.com/clickcaramel/PolyglotRocks/pull/49#discussion_r1207484667,,408.0,169a59bf7c8d2a84c1530d77a5ee9fecc8bd7555,5a30ebc6cf4e61e69b3d15d095abe4a7875b2b9e,bin/polyglot,,"The code patch adds two new regex patterns to handle developer comments and comment marks in the localization files. It also updates the command for getting the full content of the base file to exclude lines containing these new patterns.
 
 It seems like a reasonable enhancement to make the tool more versatile in handling different types of comments and marking for localization. However, without knowing the context or purpose of this code, it's difficult to assess its overall effectiveness or potential risks.
 
@@ -6428,7 +6428,7 @@ One suggestion for improvement would be to add some error checking to ensure tha
                  localisation=""`translate_string \""$id\"" \""$base_value\"" \""$description\"" \""$desired_max_length\""`""
                  description=''
                  desired_max_length=''",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1191901365,https://github.com/gluon-zone/chain/pull/525#discussion_r1191901365,,49.0,,2aaa3eaf2190825d7a532b85d878ad1f517c638e,b06ad2a0f367cc40dc7bf3e538c8402391c74abc,x/derivatives/simulation/genesis.go,,"The code patch seems to be a small modification in the value of the `ImaginaryFundingRateProportionalCoefficient` parameter for a perpetual futures market. The change sets its precision at 2 decimal places instead of 4. 
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/UnUniFi/chain/pulls/comments/1191901365,https://github.com/gluon-zone/chain/pull/525#discussion_r1191901365,,49.0,2aaa3eaf2190825d7a532b85d878ad1f517c638e,b06ad2a0f367cc40dc7bf3e538c8402391c74abc,x/derivatives/simulation/genesis.go,,"The code patch seems to be a small modification in the value of the `ImaginaryFundingRateProportionalCoefficient` parameter for a perpetual futures market. The change sets its precision at 2 decimal places instead of 4. 
 
 There is no apparent risk associated with this change, but it's hard to conclude without additional context. If this coefficient impacts any critical calculations in the codebase, it may cause unintended behaviors. It would be best to test the code thoroughly to ensure that everything continues to function as expected.
 
@@ -6454,7 +6454,7 @@ As an improvement suggestion, adding comments explaining the purpose of the modi
  				Markets: []*types.Market{
  					{
  						BaseDenom:  ""ubtc"",",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/VladislavPetyukevich/GulagGazRoom/pulls/comments/1174606865,https://github.com/VladislavPetyukevich/GulagGazRoom/pull/156#discussion_r1174606865,,10.0,,4bcc7a314439ea0cdb5683bbe5834f45434532f3,b8b1d524be838cfa3a10395ca36cdc2be2db4fa8,Backend/Interview.Domain/Users/Service/Records/UserDetail.cs,,"The code appears to define a C# class, ""UserDetail"", with properties for an Id (of type Guid), a Nickname (of type string), and an optional Avatar (of type string?). 
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/VladislavPetyukevich/GulagGazRoom/pulls/comments/1174606865,https://github.com/VladislavPetyukevich/GulagGazRoom/pull/156#discussion_r1174606865,,10.0,4bcc7a314439ea0cdb5683bbe5834f45434532f3,b8b1d524be838cfa3a10395ca36cdc2be2db4fa8,Backend/Interview.Domain/Users/Service/Records/UserDetail.cs,,"The code appears to define a C# class, ""UserDetail"", with properties for an Id (of type Guid), a Nickname (of type string), and an optional Avatar (of type string?). 
 
 As far as potential bugs or improvements:
 
@@ -6490,7 +6490,7 @@ As far as potential bugs or improvements:
 +
 +    public List<string> Roles { get; init; } = new();
  }",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/VladislavPetyukevich/GulagGazRoom/pulls/comments/1160046540,https://github.com/VladislavPetyukevich/GulagGazRoom/pull/147#discussion_r1160046540,,7.0,,8ea0e934a4c6e28acb5af5a615a607844a3c69e9,3b785c4170db549138e123d715c30acfa7470969,Backend/Interview.Domain/Questions/IQuestionArchiveRepository.cs,,"This code patch appears to add a new interface `IQuestionArchiveRepository` to the `Interview.Domain.Questions` namespace, which extends another interface `IArchiveRepository<Question>` defined in the `Interview.Domain.Repository` namespace. 
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/VladislavPetyukevich/GulagGazRoom/pulls/comments/1160046540,https://github.com/VladislavPetyukevich/GulagGazRoom/pull/147#discussion_r1160046540,,7.0,8ea0e934a4c6e28acb5af5a615a607844a3c69e9,3b785c4170db549138e123d715c30acfa7470969,Backend/Interview.Domain/Questions/IQuestionArchiveRepository.cs,,"This code patch appears to add a new interface `IQuestionArchiveRepository` to the `Interview.Domain.Questions` namespace, which extends another interface `IArchiveRepository<Question>` defined in the `Interview.Domain.Repository` namespace. 
 
 From this code snippet alone, there doesn't seem to be any bug risk, as it's just an interface definition without any implementation. Improvement suggestions would depend on the broader context of the system and its requirements. One suggestion could be to ensure that the naming conventions used here are consistent with those used throughout the system.","@@ -0,0 +1,7 @@
 +using Interview.Domain.Repository;
@@ -6500,7 +6500,7 @@ From this code snippet alone, there doesn't seem to be any bug risk, as it's jus
 +public interface IQuestionArchiveRepository : IArchiveRepository<Question>
 +{
 +}",File_Deleted,,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/clickcaramel/PolyglotRocks/pulls/comments/1210424810,https://github.com/clickcaramel/PolyglotRocks/pull/51#discussion_r1210424810,,687.0,,b0d58ca908620b3362707ecf76e85419bcd7c03d,48e480582f1a4e9b79551698858bcbd95e146c39,bin/polyglot,,"1. A few new variables are added that define exit codes and messages to use when printing error or warning messages.
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/clickcaramel/PolyglotRocks/pulls/comments/1210424810,https://github.com/clickcaramel/PolyglotRocks/pull/51#discussion_r1210424810,,687.0,b0d58ca908620b3362707ecf76e85419bcd7c03d,48e480582f1a4e9b79551698858bcbd95e146c39,bin/polyglot,,"1. A few new variables are added that define exit codes and messages to use when printing error or warning messages.
 2. The function `translate_string` now prints the specific error or warning messages instead of just returning the code.
 3. In the `main` function, a loop retrying calls to `translate_string` is added in case of failure. However, there is no upper limit to how many times it retries, so this could cause the program to get stuck in an infinite loop.
 4. When calling `translate_string`, a slight delay (`sleep $i`) is added before each retry attempt. While this might help prevent overloading the API, it might not be necessary and can make the overall execution slower.
@@ -6613,7 +6613,7 @@ anc95/ChatGPT-CodeReview,https://api.github.com/repos/clickcaramel/PolyglotRocks
                      sleep $i
                      localisation=""`translate_string \""$id\"" \""$base_value\"" \""$description\"" \""$desired_max_length\""`""
  ",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1666459833,https://github.com/fresh-trash-project/fresh-trash-backend/pull/187#discussion_r1666459833,,62.0,,7bf6c9c44999aebf8b2103dcd2dc50c50ccaeb18,aa8c985dabf20b5c4099062099e333470f877d1a,nginx/default.conf,,"Your configuration looks mostly good, but there are a few improvements and clarifications that can be made:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/fresh-trash-project/fresh-trash-backend/pulls/comments/1666459833,https://github.com/fresh-trash-project/fresh-trash-backend/pull/187#discussion_r1666459833,,62.0,7bf6c9c44999aebf8b2103dcd2dc50c50ccaeb18,aa8c985dabf20b5c4099062099e333470f877d1a,nginx/default.conf,,"Your configuration looks mostly good, but there are a few improvements and clarifications that can be made:
 
 1. **Consistent Keep-Alive Settings**: Ensure consistent keep-alive settings across similar locations to avoid unexpected behavior.
 2. **Security Headers**: Consider adding more security headers for better protection.
@@ -6806,7 +6806,7 @@ These changes should help streamline your configuration and make it easier to ma
 -        proxy_http_version 1.1;
 -    }
  }",,,,
-anc95/ChatGPT-CodeReview,https://api.github.com/repos/pokt-network/pocket/pulls/comments/1181515430,https://github.com/pokt-network/pocket/pull/707#discussion_r1181515430,,22.0,,1bdf7ee706d7c6b6e6a70271ef2d7a954c9132b8,d7cc85d553cf9b0257f16c3a213ed4de96b8363a,p2p/CHANGELOG.md,,"The code patch primarily focuses on refactoring, removing unused elements, renaming components for clarity, and adding new functionalities. Here's a brief overview of the changes:
+anc95/ChatGPT-CodeReview,https://api.github.com/repos/pokt-network/pocket/pulls/comments/1181515430,https://github.com/pokt-network/pocket/pull/707#discussion_r1181515430,,22.0,1bdf7ee706d7c6b6e6a70271ef2d7a954c9132b8,d7cc85d553cf9b0257f16c3a213ed4de96b8363a,p2p/CHANGELOG.md,,"The code patch primarily focuses on refactoring, removing unused elements, renaming components for clarity, and adding new functionalities. Here's a brief overview of the changes:
 
 1. Removed `Transport` interface: This is an improvement in terms of cleaning up the codebase by removing unnecessary elements.
 
