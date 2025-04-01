@@ -1,4 +1,4 @@
-source_action,Comment_URL,Comment_HTML_URL,Review_Start_Line,Review_End_Line,Original_Commit_id,Merge_Commit_id,Diff_path,New_path,Body,Diff_hunk,Change_Until_Merged,Whether it contain issues or suggestions (Not Contain: 0; Contain: 1),List of issues or suggestions,Addressed Status Classification (Not Addressed: 0; Partly Addressed: 1; Fully Addressed: 2),Detail
+source_action,Comment_URL,Comment_HTML_URL,Review_Start_Line,Review_End_Line,Original_Commit_id,Merge_Commit_id,Diff_path,New_path,Body,Diff_hunk,Change_Until_Merged,Whether it contain issues or suggestions (Not Contain: 0; Contain: 1),List of issues or suggestions,Addressed Status Classification (Not Enough Information：-1; Not Addressed: 0; Partly Addressed: 1; Fully Addressed: 2),Detail
 anc95/ChatGPT-CodeReview,https://api.github.com/repos/pokt-network/pocket/pulls/comments/1171806715,https://github.com/pokt-network/pocket/pull/683#discussion_r1171806715,,197,cc15ba1ea64bab29113ec8247bc952b2cc657856,fb245bc027ae55aaee936daf9f85ecb2d9ad8b40,utility/session.go,nan,"""fishermen"" ","+		return err
 +	}
 +
