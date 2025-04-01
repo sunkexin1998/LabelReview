@@ -28,7 +28,7 @@ Each file shares the same format and fields.
 | `Comment_HTML_URL` | Web link to the comment (for visual inspection). |
 | `Original_Commit_id` | The commit at which the review comment was made. |
 | `Diff_path` | The file path where the comment was placed. |
-| `New_path` | The file path where the comment was placed. If New_path is NaN, it indicates that the file at Diff_path was not renamed in the commit identified by Merge_Commit_id. If a value is present, it represents the new file name after the file was renamed.
+| `New_path` | If `New_path` is NaN, it indicates that the file at `Diff_path` was not renamed in the commit identified by `Merge_Commit_id`. If a value is present, it represents the new file name after the file was renamed.
 | `Review_Start_Line` | Start line of the reviewed code range (from `original_start_line` in API). <br/>If it is empty, it is a single line review;<br/>Not applicable to file-level review actions.<br/>This line number corresponds to the position of the modified line in the `Original_Commit_id` |
 | `Review_End_Line` | End line of the reviewed code range (from `original_line` in API). <br/>Not applicable to file-level review actions.<br/>This line number corresponds to the position of the modified line in the `Original_Commit_id` |
 | `Diff_hunk` | The code diff being reviewed: <br>– For patch-level and human comments: directly from the   `diff_hunk` in `Comment_URL`<br/>– – For the single line review,  3 extra lines above the reviewed line as context (3 lines above for single-line, full range for multi-line. <br>– – For the multiple line review,  use the scope determined by `Review_Start_Line` and `Review_End_Line`. <br/>– For file-level comments: the diff between `Review_BASE_SHA` and `Original_Commit_id`. |
