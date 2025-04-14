@@ -36,7 +36,7 @@ Each file shares the same format and fields.
 | `Body` | The full text of the review comment.<br/>In some cases, human-written comments containing code suggestions in the format of:<br/>`" ```suggestion (specific code block)``` "`<br/>will be manually rewritten to a more explicit form:<br/>`"I suggest changing\n ```\n{old_code}\n```\n to\n```\n{new_code}\n```"`<br/>This is done to help large language models (LLMs) better understand the suggested changes. |
 | `Merge_Commit_id` | The final merged commit SHA of the pull request. |
 | `Change_Until_Merged` | The file changes between `Original_Commit_id` and `Merge_Commit_id`. If the file at `Diff_path` was deleted in the commit identified by `Merge_Commit_id`, the value will be "File_Deleted".|
-| `Whether it contain issues or suggestions` | **To be annotated:** `0` = No issue/suggestion, `1` = Contains issue/suggestion. |
+| `Whether it contain issues or suggestions` | **To be annotated:** `0` = Not Contain Any Items, `1` = Only Contain General Items, `2` = Contain Specific Items. |
 | `List of issues or suggestions` | **To be annotated:** List of mentioned issues or suggestions (if any). |
 | `Addressed Status Classification` | **To be annotated:** `0` = Not addressed, `1` = Partly addressed, `2` = Fully addressed. |
 | `Detail` | **To be annotated (optional):** Description of which issues were addressed and how. |
